@@ -9,7 +9,7 @@ const ownerFilter = ({ org, repos }) => {
 };
 
 const buildQuery = ({ org, repos, startDate }) => {
-  const dateFilter = `created:>=${startDate.toISOString()}`;
+  const dateFilter = `updated:>=${startDate.toISOString()}`;
   return `type:pr sort:author-date ${ownerFilter({ org, repos })} ${dateFilter}`;
 };
 
